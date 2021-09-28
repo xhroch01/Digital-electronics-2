@@ -17,7 +17,7 @@
 2. [Calculate LED resistor value](https://electronicsclub.info/leds.htm) for typical red and blue LEDs.
 
 &nbsp;
-![ohms law](Images/ohms_law.png)
+![1](IMAGES/ohms_law.png)
 &nbsp;
 
 | **LED color** | **Supply voltage** | **LED current** | **LED voltage** | **Resistor value** |
