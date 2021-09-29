@@ -79,6 +79,7 @@ R = \frac{V_{SUPPLY}-V_{LED}}{I} =
 /* Defines -----------------------------------------------------------*/
 #define LED_GREEN   PB5     // AVR pin where green LED is connected
 #define BLINK_DELAY 500
+#define BUTTON
 #ifndef F_CPU
 # define F_CPU 16000000     // CPU frequency in Hz required for delay
 #endif
@@ -115,11 +116,11 @@ int main(void)
         // Pause several milliseconds
         _delay_ms(BLINK_DELAY);
 
-    DDRC = PORTC & ~(1<<LED_GREEN);     //vystup log 0 led sviti
+    DDRC = PORTC & ~(1<<LED_GREEN);    //vystup log 0 led sviti
     PORTC = PORTC | (1<<LED_GREEN);    //vystup log 1 led nesviti
     BLINK_DELAY();
     
-    DDRC = PORTC & ~(1<<LED_GREEN);     //vystup log 0 led sviti
+    DDRC = PORTC & ~(1<<LED_GREEN);    //vystup log 0 led sviti
     PORTC = PORTC | (1<<LED_GREEN);    //vystup log 1 led nesviti
     BLINK_DELAY();
     }
@@ -127,8 +128,14 @@ int main(void)
     // Will never reach this
     return 0;
     
-    //Part 3 - push button
-    if(bit_is_clear(PIND,PD0)) //je zmáčknuté tlačítko?
     
+    //Part 3 - push button
+    if (bit_is_clear(PIND,PD0)) //je zmáčknuté tlačítko?
+    
+    else 
+    PORTD = PORTD | (1<<LED_GREEN);
+    
+    
+
 }
 ```
