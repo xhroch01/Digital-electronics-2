@@ -32,3 +32,31 @@ R = \frac{V_{SUPPLY}-V_{LED}}{I} =
 >
 
 3. Draw the basic ways to connect a push button to the microcontroller input pin: button active-low, button active-high.
+
+| **Port** | **Pin** | **Input/output usage?** |
+| :-: | :-: | :-- |
+| A | x | Microcontroller ATmega328P does not contain port A |
+| B | 0 | Yes (Arduino pin 8) |
+|   | 1 | yes arduino pin -9 |
+|   | 2 | pin -10 |
+|   | 3 | pin -11 |
+|   | 4 | pin 12 |
+|   | 5 | pin 13 |
+|   | 6 |  |
+|   | 7 |  |
+| C | 0 | Yes (Arduino pin A0) |
+|   | 1 |  |
+|   | 2 |  |
+|   | 3 |  |
+|   | 4 |  |
+|   | 5 |  |
+|   | 6 |  |
+|   | 7 |  |
+| D | 0 | Yes (Arduino pin RX<-0) |
+|   | 1 |  |
+|   | 2 |  |
+|   | 3 |  |
+|   | 4 |  |
+|   | 5 |  |
+|   | 6 |  |
+|   | 7 |  |
