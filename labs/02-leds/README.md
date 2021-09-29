@@ -63,6 +63,8 @@ R = \frac{V_{SUPPLY}-V_{LED}}{I} =
 
 
 část 2
+
+```c
 /*/***********************************************************************
  * 
  * Alternately toggle two LEDs when a push button is pressed.
@@ -129,3 +131,4 @@ int main(void)
     if(bit_is_clear(PIND,PD0)) //je zmáčknuté tlačítko?
     
 }
+```
