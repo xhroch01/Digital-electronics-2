@@ -166,4 +166,4 @@ int main(void)
 }
 ```
 Knight rider
-![1](IMAGES/knightrider.png)
+![1](IMAGES/nightrider.png)
