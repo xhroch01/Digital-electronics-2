@@ -1,4 +1,4 @@
-#DE2 - Lab 3 - Vojtěch Hroch
+# DE2 - Lab 3 - Vojtěch Hroch
 
 ## Preparation tasks (done before the lab at home)
 
@@ -8,10 +8,10 @@
 | :-: | :-: | :-: | :-- | 
 | `uint8_t`  | 8 | 0, 1, ..., 255 | Unsigned 8-bit integer |
 | `int8_t`   |  |  |  |
-| `uint16_t` |  |  |  |
+| `uint16_t` |  |  | bez znamének |
 | `int16_t`  |  |  |  |
 | `float`    |  | -3.4e+38, ..., 3.4e+38 | Single-precision floating-point |
-| `void`     |  |  |  |
+| `void`     | 0 |  |  |
 
 2. Any function in C contains a declaration (function prototype), a definition (block of code, body of the function); each declared function can be executed (called). Study [this article](https://www.programiz.com/c-programming/c-user-defined-functions) and complete the missing sections in the following user defined function declaration, definition, and call.
 
