@@ -18,7 +18,7 @@ Link to your `Digital-electronics-2` GitHub repository:
 | `uint16_t` | 16 | 0 -> 65535 | 2 byte unsigned intiger |
 | `int16_t`  | 16 | -32768 -> 32767 | 2 byte signed intiger |
 | `float`    | 32 | -3.4e+38, ..., 3.4e+38 | Single-precision floating-point |
-| `void`     | 0 | 0 | when type is not declared |
+| `void`     | 0 | 0 | type is not declared |
 
 
 ### GPIO library
