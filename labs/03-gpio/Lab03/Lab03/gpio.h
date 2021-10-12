@@ -52,7 +52,7 @@ void GPIO_config_output(volatile uint8_t *reg_name, uint8_t pin_num);
 
 
 /* GPIO_config_input_nopull */
-void GPIO_config_input_nopull(volatile uint8_t *reg_name, uint8_t pin_num) //sk
+void GPIO_config_input_nopull(volatile uint8_t *reg_name, uint8_t pin_num); //sk
 
 /**
  * @brief  Configure one input pin and enable pull-up.
@@ -73,10 +73,10 @@ void GPIO_write_low(volatile uint8_t *reg_name, uint8_t pin_num);
 
 
 /* GPIO_write_high */
-void GPIO_write_high(volatile uint8_t *reg_name, uint8_t pin_num) //sk
+void GPIO_write_high(volatile uint8_t *reg_name, uint8_t pin_num); //sk
 
 /* GPIO_toggle */
-void GPIO_toggle(volatile uint8_t *reg_name, uint8_t pin_num) //sk
+void GPIO_toggle(volatile uint8_t *reg_name, uint8_t pin_num);//sk
 
 /**
  * @brief  Read a value from input pin.

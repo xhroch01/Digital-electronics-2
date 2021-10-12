@@ -10,7 +10,9 @@
  **********************************************************************/
 
 /* Includes ----------------------------------------------------------*/
+#include <avr/io.h>  
 #include "gpio.h"
+       // AVR device-specific IO definitions
 
 /* Function definitions ----------------------------------------------*/
 /**********************************************************************
@@ -20,7 +22,7 @@
  *           pin_num - Pin designation in the interval 0 to 7
  * Returns:  none
  **********************************************************************/
-void GPIO_config_output(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_config_output(volatile uint8_t *reg_name, uint8_t pin_num)
 {
     *reg_name = *reg_name | (1<<pin_num);
 }
@@ -28,9 +30,11 @@ void GPIO_config_output(volatile uint8_t *reg_name, uint8_t pin_num);
 /**********************************************************************
  * Function: GPIO_config_input_nopull()
  **********************************************************************/
-void GPIO_config_input_nopull(volatile uint8_t *reg_name, uint8_t pin_num); //sk
+void GPIO_config_input_nopull(volatile uint8_t *reg_name, uint8_t pin_num) //sk
 {
-    *reg_name = *reg_name & ~(1<<pin_num)   //sk
+    *reg_name = *reg_name & ~(1<<pin_num);   //sk
+	
+	*reg_name = *reg_name & ~(1<<pin_num);
 }
 
 /**********************************************************************
@@ -40,10 +44,10 @@ void GPIO_config_input_nopull(volatile uint8_t *reg_name, uint8_t pin_num); //sk
  *           pin_num - Pin designation in the interval 0 to 7
  * Returns:  none
  **********************************************************************/
-void GPIO_config_input_pullup(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_config_input_pullup(volatile uint8_t *reg_name, uint8_t pin_num)
 {
     *reg_name = *reg_name & ~(1<<pin_num);  // Data Direction Register
-    reg_name++;                     // Change pointer to Data Register
+    reg_name++;								// Change pointer to Data Register
     *reg_name = *reg_name | (1<<pin_num);   // Data Register
 }
 
@@ -54,9 +58,9 @@ void GPIO_config_input_pullup(volatile uint8_t *reg_name, uint8_t pin_num);
  *           pin_num - Pin designation in the interval 0 to 7
  * Returns:  none
  **********************************************************************/
-void GPIO_write_low(volatile uint8_t *reg_name, uint8_t pin_num);
+void GPIO_write_low(volatile uint8_t *reg_name, uint8_t pin_num)
 {
-    *reg_name = *reg_name & ~(1<<pin_num);
+    *reg_name = *reg_name & ~(1 << pin_num);
 }
 
 /**********************************************************************
@@ -64,7 +68,7 @@ void GPIO_write_low(volatile uint8_t *reg_name, uint8_t pin_num);
  **********************************************************************/
 void GPIO_write_high(volatile uint8_t *reg_name, uint8_t pin_num) //sk
 {
-    *reg_name = *reg_name | ~(1<<pin_num);   //sk
+	*reg_name |= (1<<pin_num);   //sk
 }
 
 /**********************************************************************
@@ -72,20 +76,13 @@ void GPIO_write_high(volatile uint8_t *reg_name, uint8_t pin_num) //sk
  **********************************************************************/
 void GPIO_toggle(volatile uint8_t *reg_name, uint8_t pin_num) //sk
 {
-    *reg_name = *reg_name ^ (1<<pin_num)   //sk-ok?  
+	*reg_name ^= (1<<pin_num);   //sk  
 }
 
 /**********************************************************************
  * Function: GPIO_read()
  **********************************************************************/
-void GPIO_read(volatile uint8_t *reg_name, uint8_t pin_num) //sk
+uint8_t GPIO_read(volatile uint8_t *reg_name, uint8_t pin_num) //sk
 {
-    *reg_name = *reg_name & (1<<pin_num)  // sk-ok?
-    
-    return(bit_is_set(*reg_name, pin_num));
-    
-    if((*reg_name & (1 << pin_num)) == 0) return(0);
-        else return(1);
-        
-    return(*reg_name & (1<< pin_num));
+    return (((*reg_name) >> pin_num) & 1);
 }
