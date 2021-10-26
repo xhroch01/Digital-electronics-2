@@ -38,7 +38,7 @@ ISR(TIMER1_OVF_vect)
 {
     // WRITE YOUR CODE HERE
     cnt0++;
-    if (cnt0 > 9)
+    if (cnt0 > 59)
     {
         cnt0 = 0;
         cnt1++;
