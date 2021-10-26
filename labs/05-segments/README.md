@@ -38,7 +38,7 @@ ISR(TIMER1_OVF_vect)
 {
     // WRITE YOUR CODE HERE
     cnt0++;
-    if (cnt0 > 9)
+    if (cnt0 > 59)
     {
         cnt0 = 0;
         cnt1++;
@@ -70,4 +70,4 @@ Consider a kitchen alarm with a 7-segment display, one LED and three push button
 
 1. Scheme of kitchen alarm; do not forget the supply voltage. The image can be drawn on a computer or by hand. Always name all components and their values.
 
-   ![your figure]()
+   ![your figure](IMAGES/kuchyn.JPG)
