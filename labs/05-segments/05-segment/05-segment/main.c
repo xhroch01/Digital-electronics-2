@@ -71,13 +71,13 @@ ISR(TIMER1_OVF_vect)
         cnt0 = 0;
         cnt1++;
         if (cnt1 > 5)
-            cnt1 = 0);
+           (cnt1 = 0);
     }    
 }
 
 ISR(TIMER0_OVF_vect)
 {
-    static uint8_t pos = 0;  // This line will only run the first time
+		static uint8_t pos = 0;  // This line will only run the first time
         cnt0++;
         if (cnt0 > 9)
         cnt0 = 0;
