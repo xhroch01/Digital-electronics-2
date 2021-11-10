@@ -2,8 +2,8 @@
 
    | **Signal** | **MCU pin** | **Arduino pin(s)** |
    | :-: | :-: | :-: |
-   | SDA (data)  |  |  |
-   | SCL (clock) |  |  |
+   | SDA (data)  |  | PB5[13] |
+   | SCL (clock) |  | PB4[12] |
 
 2. What is the general structure of I2C address and data frames?
 
