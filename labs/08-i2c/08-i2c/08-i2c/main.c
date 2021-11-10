@@ -137,3 +137,6 @@ ISR(TIMER1_OVF_vect)
         break;
     }
 }
+
+twi_start((addr<<1) + TWI_WRITE);
+TWI_WRITE(0x00);
